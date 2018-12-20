@@ -1,12 +1,12 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: osx-64
-flask=1.0.2
-flask-cors=3.0.4
-nltk=3.4
-numpy=1.14.3
-numpy-base=1.14.3
-pandas=0.23.0
-scikit-learn=0.19.1
-scipy=1.1.0
-sqlite=3.23.1
+flask==1.0.2
+flask-cors==3.0.4
+nltk==3.4
+numpy==1.14.3
+numpy-base==1.14.3
+pandas==0.23.0
+scikit-learn==0.19.1
+scipy==1.1.0
+sqlite==3.23.1
