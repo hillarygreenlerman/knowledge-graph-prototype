@@ -8,4 +8,3 @@ numpy==1.14.3
 pandas==0.23.0
 scikit-learn==0.19.1
 scipy==1.1.0
-sqlite==3.23.1
