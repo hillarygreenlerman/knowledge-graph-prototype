@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="{{ url_for('static', filename='learning_objectives.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='learning_objectives.css') }}">
+    <script>
+        $( function() {
+            var vObj = $( '#verbs' );
+            verb_list.forEach(function(v, i) {
+                vObj.append("<option value='" + v + "'>" + v + "</option>")
+            });
+
+            $( '#add' ).click(function() {
+                submitObj();
+            });
+
+            $( '#export' ).click(function() {
+                exportObj();
+            });
+        } );
+    </script>
+</head>
+<body>
+
+    <h1 id="courseName">{{ course_name }}</h1>
+
+    <div id="top" class="form-style-5">
+
+        <table>
+            <tr valign="top">
+                <td>Learner will be able to</td>
+                <td>
+                    <select name="verbs" id="verbs">
+                    </select>
+                </td>
+                <td>
+                    <textarea id="lo-text" rows="4" cols="50"></textarea>
+                </td>
+            </tr>
+            <tr valign="top">
+                <table id="otherObjectives">
+                </table>
+            </tr>
+        </table>
+        <input type="button" value="Add" id='add'></input>
+        
+    </div>
+
+    <div id="bottom" class="form-style-5">
+
+        <table id="learning-objectives">
+        <thead>
+            <tr>
+                <th>
+                    Objective
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        </table>
+
+        <br>
+        <input type="button" value="Export" id="export"></inpt>
+    
+    </div>
+ 
+</body>
+</html>

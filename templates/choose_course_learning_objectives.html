@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        var data = {
+            'Python': ['Introduction to Data Science in Python', 'Python 2', 'Python 3'],
+            'SQL': ['SQL1', 'SQL2', 'SQL3'],
+            'Spreadsheets': ['Spreadsheets1', 'Spreadsheets2', 'Spreadsheets3'],
+            'R': ['R1', 'R2', 'R3']
+        }
+
+        function update(l, cObj) {
+            cObj.empty();
+            data[l].forEach(function(c, index) {
+                cObj.append('<option value=' + index.str + '>' + c + '</option>');
+            });
+        }
+
+        $( function() {
+            var lang = $( '#language' )
+            update(lang.val(), $( '#course' ));
+            lang.change(
+                function( event, data ) {
+                    console.log(lang.val());
+                    update(lang.val(), $( '#course' ));
+                }
+            );
+        })
+    </script>
+</head>
+<body>
+    <div class="demo">
+        <form action="#">
+
+            <label for="language">Select a language</label>
+            <select name="language" id="language">
+                <option value="SQL">SQL</option>
+                <option value="Python">Python</option>
+                <option value="R">R</option>
+                <option value="Spreadsheets">Spreadsheets</option>
+            </select>
+            <br>
+            <label for="course">Select a course</label>
+            <select name="course" id="course">
+            </select>
+            <br>
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+</html>
